@@ -31,7 +31,15 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 
 // CREA TU FUNCION challenge1 aqui 
 
-
+function challenge1(){
+    let pregunta = prompt("Cuantos botones necesitas: ");
+    for(let i = 0; i < pregunta; ++i){
+        let d1 = document.getElementById("dummy");
+        let btn = document.createElement("button");
+        btn.textContent = nombres[i];
+        d1.appendChild(btn);
+    }
+}
 
 // ************** PARTE 2    **************
 
@@ -42,6 +50,12 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 
 // CREA TU FUNCION challenge2 2 aquí.
 
+function challenge2(){
+    nombres.forEach((name) =>{
+        console.log(name.toUpperCase());
+    }
+    )
+}
 
 
 // ************** PARTE 3    **************
@@ -55,8 +69,38 @@ A) Escribe un constructor que te permita generar objetos de tipo "Dog" que recib
 3) Raza
 
 
+
 B) Utilizando el constructor crea 3 objectos con diferentes valores y escribe en consola cada objeto.
 
+*/
+
+function Dog(Nombre, Color, Raza){
+    this.Nombre = Nombre;
+    this.Color = Color;
+    this.Raza = Raza;
+}
+
+var d1 = new Dog("Fido","Cafe","Beagle");
+var d2 = new Dog("Toto","Negro","Husky");
+var d3 = new Dog("Manchas","Blanco","Dalmata");
+
+
+function challenge3(){
+
+    console.log(d1);
+    console.log(d2);
+    console.log(d3);
+}
+
+function printInfo(dog){
+    console.log(`Nombre: ${dog.Nombre}, De color: ${dog.Color}, Raza: ${dog.Raza}`);
+}
+
+printInfo(d1);
+
+
+
+/*
 
 *****BONUS**** 10  puntos
 
@@ -80,7 +124,7 @@ Invoca la función para validar su funcionalidad.
 
     <button onclick="challenge1()">Challenge 1</button>
     <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
+    <button onclick="challenge3()">Challenge 3</button>
 
   
 <div id = "dummy">
